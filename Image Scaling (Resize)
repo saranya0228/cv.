@@ -1,0 +1,7 @@
+image = cv2.imread('image.jpg')
+bigger = cv2.resize(image, None, fx=2, fy=2)
+smaller = cv2.resize(image, None, fx=0.5, fy=0.5)
+cv2.imshow("Bigger", bigger)
+cv2.imshow("Smaller", smaller)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
