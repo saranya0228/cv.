@@ -1,0 +1,5 @@
+image = cv2.imread('image.jpg')
+canny_image = cv2.Canny(image, 100, 200)
+cv2.imshow("Canny Edge", canny_image)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
