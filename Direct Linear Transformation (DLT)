@@ -1,0 +1,12 @@
+# Same as Homography using findHomography
+# DLT is used under the hood here
+image = cv2.imread('image.jpg')
+src_pts = np.float32([[56,65],[368,52],[28,387],[389,390]])
+dst_pts = np.float32([[0,0],[300,0],[0,300],[300,300]])
+
+H, _ = cv2.findHomography(src_pts, dst_pts, method=0)  # 0 is DLT
+dlt_result = cv2.warpPerspective(image, H, (300, 300))
+
+cv2.imshow('DLT Transform', dlt_result)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
