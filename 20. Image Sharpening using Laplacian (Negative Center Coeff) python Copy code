@@ -1,0 +1,7 @@
+image = cv2.imread('image.jpg', 0)
+laplacian = cv2.Laplacian(image, cv2.CV_64F)
+sharpened = cv2.subtract(image, laplacian.astype(np.uint8))
+
+cv2.imshow('Sharpened Image', sharpened)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
